@@ -1,0 +1,83 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.1                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.1
+Exec   : QHDFoam -parallel
+Date   : Mar 28 2018
+Time   : 16:48:12
+Host   : "room104-2.intra.ispras.ru"
+PID    : 18806
+Case   : /home/d.ryazanov/verification/BackwardCases/back
+nProcs : 4
+Slaves : 
+3
+(
+"room104-2.intra.ispras.ru.18807"
+"room104-2.intra.ispras.ru.18808"
+"room104-2.intra.ispras.ru.18809"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            heRhoQGDThermo;
+    mixture         pureMixture;
+    transport       const;
+    thermo          eConst;
+    equationOfState perfectGas;
+    specie          specie;
+    energy          sensibleInternalEnergy;
+}
+
+Selecting QGD coeffs evaluation approach type constScPrModel1QGDCoeffs
+SSSS
+SSSS
+SSSS
+SSSS
+SSSS
+SSSS
+fvMesh
+After calculate()
+fvMesh
+Thermo corrected
+
+Reading gravitationalProperties
+Creating turbulence model
+
+Selecting turbulence model type laminar
+fvMesh
+Selecting finite volume surface calculus stencil type reduced
+Creating Face Fluxes is done
+
+Starting time loop
+
+fvMesh
+Time = 0.01
+
+DICPCG:  Solving for p, Initial residual = 1, Final residual = 8.61847e-11, No Iterations 206
+Solve of continuity finished
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 1.90053e-12, No Iterations 3
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 2.88309e-12, No Iterations 3
+-------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+-------------------------------------------------------
